@@ -1,0 +1,66 @@
+# Build outputs
+*.exe
+*.dll
+*.o
+*.obj
+*.out
+*.hex
+*.bin
+*.axf
+*.elf
+*.map
+*.lst
+*.d
+*.dep
+*.crf
+*.htm
+*.lnp
+*.scvd
+
+# Python and local runtime state
+__pycache__/
+*.py[cod]
+FLASH/
+result/
+othermap/
+
+# Local experiments, benchmarks, logs, and scratch worktrees
+.scratch/
+benchmarks/
+solver_log*.txt
+*.log
+*.trace
+*.dmp
+*.tmp
+*.bak
+gmon.out
+
+# Build directories and IDE-local files
+build/
+bin/
+obj/
+.vscode/
+.vs/
+*.uvoptx
+*.uvprojx
+*.uvguix.*
+*.suo
+*.user
+*.idb
+*.pdb
+*.ilk
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Local firmware integration and vendor trees are intentionally not part of this repository.
+移植工程/
+Coreboard_Demo/
+
+# Local agent/project context (kept out of the public source tree).
+.agents/
+.codex/
+AGENTS.md
+CONTEXT.md

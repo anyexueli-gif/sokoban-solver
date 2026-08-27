@@ -1,0 +1,26 @@
+EXPORTS
+    solver_create
+    solver_destroy
+    solver_clear_scan_cache_flash
+    solver_load_map_from_string
+    solver_load_residual_map_from_string
+    solver_solve
+    solver_solve_robust
+    solver_get_solution
+    solver_set_strict_target_mode
+    solver_set_identified_solve_mode
+    solver_generate_scan_path
+    solver_build_scan_cache_key
+    solver_try_apply_scan_cache
+    solver_export_scan_cache
+    solver_assign_next_scan_id
+    solver_get_bomb_delay_count
+    solver_get_bomb_delay_event
+    solver_get_bomb_delay_at_path_index
+    solver_build_bomb_delay_events_from_state
+    sokoban_recovery_create
+    sokoban_recovery_reset
+    sokoban_recovery_begin
+    sokoban_recovery_get_result
+    sokoban_recovery_submit_observation
+    sokoban_recovery_submit_id

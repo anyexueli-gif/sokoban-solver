@@ -1,0 +1,6 @@
+# Python 3.12 demo dependencies tested with this repository.
+pygame==2.6.1
+
+# Optional serial-control and host-information support.
+pyserial==3.5
+psutil==7.2.2

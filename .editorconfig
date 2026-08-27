@@ -1,0 +1,14 @@
+root = true
+
+[*]
+end_of_line = crlf
+insert_final_newline = true
+
+[*.{c,h}]
+# Driver C/H sources retain their original CP936 encoding. EditorConfig has
+# no CP936 value, so leave charset unset rather than silently converting them.
+charset = unset
+
+[*.{py,ps1,bat,md,json}]
+charset = utf-8
+trim_trailing_whitespace = true

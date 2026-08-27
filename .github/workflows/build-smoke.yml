@@ -1,0 +1,36 @@
+name: Build and smoke test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check Python syntax
+        run: python -m py_compile User/demo.py map_eligibility.py
+
+      - name: Build the C protocol runner
+        run: |
+          mkdir -p build/ci
+          gcc \
+            -std=c99 -O2 -Wall -Wextra -Wno-unused-function \
+            -finput-charset=GBK -IDriver -IUser \
+            -include User/pc_flash.h \
+            User/pc_main.c User/pc_flash.c \
+            Driver/astar.c Driver/sokoban_flash.c Driver/sokoban_scan.c \
+            Driver/sokoban_solver.c Driver/sokoban_recovery.c \
+            -o build/ci/sokoban_solver
+
+      - name: Run protocol smoke test
+        run: |
+          printf 'WARMUP\nEXIT\n' | ./build/ci/sokoban_solver
